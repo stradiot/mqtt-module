@@ -16,7 +16,7 @@ class MqttClient extends EventEmitter {
         this.client = connect(this.broker, this.options);
 
         this.client.on('connect', () => {
-            config.topics.forEach((topic) => client.subscribe(topic, { qos: 2 }));
+            config.topics.forEach((topic) => this.client.subscribe(topic, { qos: 2 }));
             publish('allModules', 'identifyModule');
         });
 
@@ -53,7 +53,7 @@ class MqttClient extends EventEmitter {
     }
 
     publish(topic, request, parameters){
-      client.publish(
+      this.client.publish(
         topic,
         JSON.stringify({ request, parameters }),
         { retain: false, qos: 2 }
