@@ -4,6 +4,7 @@ const { EventEmitter } = require('events');
 
 class MqttClient extends EventEmitter {
     constructor() {
+        super();
         this.broker = config.brokerAddress;
         this.options = {
           clientId: config.clientId,
