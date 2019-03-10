@@ -13,7 +13,7 @@ class MqttClient extends EventEmitter {
           password: config.password
         };
 
-        this.client = connect(broker, options);
+        this.client = connect(this.broker, this.options);
 
         this.client.on('connect', () => {
             config.topics.forEach((topic) => client.subscribe(topic, { qos: 2 }));
