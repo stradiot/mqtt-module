@@ -1,6 +1,5 @@
 const { connect } = require('async-mqtt');
 const config = require('./config');
-const { resolve } = require('./mqtt-resolver');
 const { EventEmitter } = require('events');
 
 class MqttClient extends EventEmitter {
