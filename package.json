@@ -1,0 +1,14 @@
+{
+  "name": "mqtt-module",
+  "version": "1.0.0",
+  "description": "mqtt client module for IoThings",
+  "main": "MqttClient.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Stradiot",
+  "license": "ISC",
+  "dependencies": {
+    "async-mqtt": "^2.2.0"
+  }
+}
