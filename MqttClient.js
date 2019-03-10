@@ -17,7 +17,7 @@ class MqttClient extends EventEmitter {
 
         this.client.on('connect', () => {
             config.topics.forEach((topic) => this.client.subscribe(topic, { qos: 2 }));
-            publish('allModules', 'identifyModule');
+            this.publish('allModules', 'identifyModule');
         });
 
         this.client.on('reconnect', () => {
