@@ -52,6 +52,10 @@ class MqttClient extends EventEmitter {
         }
     }
 
+    restartModule(moduleId){
+        this.publish(`${moduleId}/moduleManagement`, 'restartModule');
+    }
+
     publish(topic, request, parameters){
       this.client.publish(
         topic,
